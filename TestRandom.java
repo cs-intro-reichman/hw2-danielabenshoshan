@@ -2,5 +2,37 @@
 public  class  TestRandom {
 	public static void main(String[]  args) {
 	    // Replace this comment with your code
+		int Ntimes = Integer.parseInt(args[0]);
+		double randomNumber = Math.random();
+		double ratio= 0.0;
+		int counter = 0;
+		int greater = 0;
+		int lessOrEqual = 0;
+		while ( counter < Ntimes){
+			if(randomNumber <= 0.5){
+				lessOrEqual++;
+			} else{
+				greater++;
+			}
+			randomNumber = Math.random();
+			counter++;
+		}
+		System.out.println("> 0.5: "+greater+" times");
+		System.out.println("<= 0.5: "+lessOrEqual+" times");
+
+		if(lessOrEqual!=0 && greater!=0){
+			if(lessOrEqual>greater){
+				ratio = (double) greater/lessOrEqual;
+			} else{
+				ratio = (double) lessOrEqual/greater;
+			}
+			System.out.print("Ratio: "+ ratio);
+		}
+		/*if(lessOrEqual>greater){
+			ratio = (double) greater/lessOrEqual;
+		} else{
+			ratio = (double) lessOrEqual/greater;
+		}
+		System.out.print("Ratio: "+ ratio);*/
 	}
 }
